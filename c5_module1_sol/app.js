@@ -12,7 +12,7 @@
 
     $scope.check = function() {
       var number = $scope.items.split(',').length;
-      if ($scope.items == "") {
+      if ($scope.items.length == 0) {
         $scope.message = "Please enter data first";
       }
       else if (number <= 3) {
