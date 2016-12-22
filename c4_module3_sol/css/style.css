@@ -1,0 +1,37 @@
+#header-nav {
+  background-color: #ffcccc;
+}
+
+.navbar-brand {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.navbar-brand h1 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.navbar-brand a:hover, .navbar-brand a:focus {
+  text-decoration: none;
+}
+
+#nav-list a {
+  text-align: center;
+}
+
+#menu-header {
+  text-align: center;
+}
+#chicken, #beef, #sushi {
+  margin-top: 15px;
+  margin-bototm: 15px;
+}
+#chicken h3, #beef h3, #sushi h3 {
+  text-align: center;
+}
+
+#chicken div, #beef div, #sushi div {
+  background-color: #dbe793;
+  padding: 1px 15px 1px 15px;
+}
