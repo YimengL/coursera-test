@@ -11,7 +11,8 @@
     $scope.message = "";
 
     $scope.countItem = function() {
-      var itemArr = $scope.items.split(" ");
+      var itemArr = $scope.items.split(",");
+      console.log(itemArr);
       if (itemArr[0] == "") {
         $scope.message = "Please enter data first";
       }
