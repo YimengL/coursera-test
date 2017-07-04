@@ -1,10 +1,17 @@
 (function() {
-  use 'strict',
+  'use strict';
 
   angular.module('ShoppingListCheckOff', [])
+  .controller('AlreadyBoughtController', AlreadyBoughtController)
   .controller('ToBuyController', ToBuyController)
-  .controller('AlreadyBoughtController ', AlreadyBoughtController)
   .service('ShoppingListCheckOffService', ShoppingListCheckOffService);
+
+  AlreadyBoughtController.$inject = ['ShoppingListCheckOffService'];
+  function AlreadyBoughtController(ShoppingListCheckOffService) {
+    var alreadyBought = this;
+
+    alreadyBought.items = ShoppingListCheckOffService.getAlreadyBoughtList();
+  }
 
   ToBuyController.$inject = ['ShoppingListCheckOffService'];
   function ToBuyController(ShoppingListCheckOffService) {
@@ -15,13 +22,6 @@
     }
 
     toBuy.items = ShoppingListCheckOffService.getToBuyList();
-  }
-
-  AlreadyBoughtController.$inject = ['ShoppingListCheckOffService'];
-  function AlreadyBoughtController(ShoppingListCheckOffService) {
-    var alreadyBought = this;
-
-    alreadyBought.items = ShoppingListCheckOffService.getAlreadyBoughtList();
   }
 
   function ShoppingListCheckOffService() {
@@ -39,17 +39,17 @@
     var alreadyBoughtList = [];
 
     service.checkOffItem = function(itemIdx) {
-      item = toBuyList[itemIdx];
+      var item = toBuyList[itemIdx];
       toBuyList.splice(itemIdx, 1);
       alreadyBoughtList.push(item);
     };
 
-    service.getToBuyList = function() {
-      return toBuyList;
-    };
-
     service.getAlreadyBoughtList = function() {
       return alreadyBoughtList;
+    };
+
+    service.getToBuyList = function() {
+      return toBuyList;
     };
 
   }
