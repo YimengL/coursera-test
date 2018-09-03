@@ -2,4 +2,4 @@
 
 ### Important command
 
-```browser-sync start --server --direcotry --files "**/*"```
+```browser-sync start --server --directory --files "**/*"```
